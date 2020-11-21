@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
+import List from "./List.js";
 
 
 
@@ -9,9 +10,9 @@ class App extends Component {
 
     return (
       <div>
-        <Header />
-        <h1> Rendering Elements </h1>
-        <Footer/>
+        <Header list="3 terbaik"/>
+        <List />
+        <Footer name="Makanan Nusantara" tahun="2020"/>
       </div>
     );
   }
