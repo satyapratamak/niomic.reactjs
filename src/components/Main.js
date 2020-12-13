@@ -9,7 +9,8 @@ class Main extends Component{
 
     this.state = {
       title:"Menu Makanan",
-      title2: "Menu Minuman"
+      title2: "Menu Minuman",
+      inputValue: "Nasi Padang Nusantara"
     }
 
     this.ubahData = this.ubahData.bind(this);
@@ -31,8 +32,8 @@ class Main extends Component{
 
   }
 
-  handleChange(){
-    console.log("Jalan");
+  handleChange(e){
+    console.log(e.target.value);
   }
 
   render(){
@@ -44,7 +45,10 @@ class Main extends Component{
         <button onClick={this.ubahData}> UBAH DATA </button>
         <br/>
           <br/>
-        <input type="text" onChange={this.handleChange} />
+        <input
+            type="text"
+            value={this.state.inputValue}
+            onChange={this.handleChange} />
       </div>
     );
   }
