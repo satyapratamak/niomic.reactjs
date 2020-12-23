@@ -10,7 +10,8 @@ class Main extends Component{
     this.state = {
       title:"Menu Makanan",
       title2: "Menu Minuman",
-      inputValue: "Nasi Padang Nusantara"
+      inputValue: "",
+      inputKota: "",
     }
 
     this.ubahData = this.ubahData.bind(this);
@@ -32,7 +33,17 @@ class Main extends Component{
 
   }
 
-  handleChange(e){
+  handleChange(value, e){
+    //this.setState({[value]:e.target.value});
+
+    this.setState((state, props) => {
+
+      return {
+        [value] : e.target.value
+      }
+    })
+
+    /**/
     console.log(e.target.value);
   }
 
@@ -48,7 +59,13 @@ class Main extends Component{
         <input
             type="text"
             value={this.state.inputValue}
-            onChange={this.handleChange} />
+            onChange={e=>this.handleChange("inputValue", e)}
+            placeholder="Nama"/>
+        <input
+            type="text"
+            value={this.state.inputKota}
+            onChange={e=>this.handleChange("inputKota", e)}
+            placeholder="Kota"/>
       </div>
     );
   }

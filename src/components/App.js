@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
-import List from "./List.js";
+//import List from "./List.js";
 import Top from "./Top";
 import Main from "./Main";
 
@@ -15,7 +15,9 @@ class App extends Component {
         <Header list="3 terbaik"/>
         <Top />
         <Main />
-        <List />
+        {
+          // <List />
+        }
         <Footer name="Makanan Nusantara" tahun="2020"/>
       </div>
     );
