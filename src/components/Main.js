@@ -1,4 +1,25 @@
 import React, {Component} from "react";
+import menuMakananFood from "./lib/Food";
+
+
+const menuMakanan = [
+  {
+    nama: "Opor",
+    harga: 10000,
+  },
+  {
+    nama: "Coto Makassar",
+    harga: 15000,
+  },
+  {
+    nama: "Rendang",
+    harga: 20000,
+  },
+  {
+    nama: "Gulai Kakap",
+    harga: 25000,
+  },
+];
 
 
 
@@ -12,6 +33,24 @@ class Main extends Component{
       title2: "Menu Minuman",
       inputValue: "",
       inputKota: "",
+      menuMakanan: [
+        {
+          nama: "Mie Ayam",
+          harga: 10000,
+        },
+        {
+          nama: "Bakso",
+          harga: 15000,
+        },
+        {
+          nama: "Mie Ayam Bakso",
+          harga: 20000,
+        },
+        {
+          nama: "Soto",
+          harga: 25000,
+        },
+      ],
     }
 
     this.ubahData = this.ubahData.bind(this);
@@ -48,6 +87,7 @@ class Main extends Component{
   }
 
   render(){
+
     return (
 
       <div>
@@ -66,6 +106,54 @@ class Main extends Component{
             value={this.state.inputKota}
             onChange={e=>this.handleChange("inputKota", e)}
             placeholder="Kota"/>
+
+        {
+          this.state.menuMakanan.map( (value, index) => {
+            return(
+              <div key={index}>
+                <p> No : {index+1} </p>
+                <p> Menu Makanan : {value.nama} </p>
+                <p> Harga : {value.harga} </p>
+              </div>
+            );
+          })
+        }
+
+        {
+          this.props.menuMakanan.map( (value, index) => {
+            return(
+              <div key={index}>
+                <p> No : {index+1} </p>
+                <p> Menu Makanan : {value.nama} </p>
+                <p> Harga : {value.harga} </p>
+              </div>
+            );
+          })
+        }
+
+        {
+          menuMakanan.map( (value, index) => {
+            return(
+              <div key={index}>
+                <p> No : {index+1} </p>
+                <p> Menu Makanan : {value.nama} </p>
+                <p> Harga : {value.harga} </p>
+              </div>
+            );
+          })
+        }
+
+        {
+          menuMakananFood.map( (value, index) => {
+            return(
+              <div key={index}>
+                <p> No : {index+1} </p>
+                <p> Menu Makanan : {value.nama} </p>
+                <p> Harga : {value.harga} </p>
+              </div>
+            );
+          })
+        }
       </div>
     );
   }
