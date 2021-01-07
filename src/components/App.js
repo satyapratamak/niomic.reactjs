@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
 //import List from "./List.js";
+import CustomInput from "./CustomInput.js";
 import Top from "./Top";
 import Form from "./Form"
 //import Main from "./Main";
@@ -15,8 +16,10 @@ class App extends Component {
       <div>
         <Header list="3 terbaik"/>
         <Top />
-        <Form />
+        <CustomInput />
+
         {
+          // <Form />
           // <Main menuMakanan={
           // [
           //   {
