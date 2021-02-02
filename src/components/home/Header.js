@@ -2,6 +2,14 @@ import React, {
   Component
 } from "react";
 
+import "./header.css";
+
+const judul = {
+  color:"orange",
+  backgroundColor : "blue",
+  marginTop : "100px",
+};
+
 class Header extends Component {
 
   constructor(props){
@@ -9,7 +17,7 @@ class Header extends Component {
     this.state = {
       daftar:"Daftar Makanan Nusantara",
       dataList: this.props.list,
-      statusRendering: false,
+      statusRendering: true,
       date : new Date(),
     }
     this.handlePesan = this.handlePesan.bind(this); // for using props and state
@@ -32,6 +40,8 @@ class Header extends Component {
     });
   }
 
+
+
   render() {
     console.log("Jalan : Render");
     return(
@@ -39,14 +49,17 @@ class Header extends Component {
         {
           this.state.statusRendering === true ?(
             <div>
-              <h1> Selamat Datang</h1>
-              <h2> Silakan Pilih Makanan</h2>
+              <h1 style={{
+                color:"blue",
+                backgroundColor : "orange",
+                marginTop:"100px"}}> Selamat Datang</h1>
+              <h2 style={judul}> Silakan Pilih Makanan</h2>
             </div>
 
           ) : (
             <div>
-              <h1> Selamat Tinggal</h1>
-              <h2> Jangan lupa datang kembali</h2>
+              <h1 id="judulKedua"> Selamat Tinggal</h1>
+              <h2 className="judulInfo"> Jangan lupa datang kembali</h2>
             </div>
           )
 
